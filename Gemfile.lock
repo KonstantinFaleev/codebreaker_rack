@@ -9,6 +9,9 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
+    codeclimate-test-reporter (1.0.9)
+      simplecov (<= 0.13)
+    colorize (0.8.1)
     concurrent-ruby (1.1.7)
     diff-lcs (1.4.4)
     docile (1.1.5)
@@ -63,6 +66,8 @@ PLATFORMS
 
 DEPENDENCIES
   codebreaker!
+  codeclimate-test-reporter
+  colorize
   rack
   rack-test
   rspec
