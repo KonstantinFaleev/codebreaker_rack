@@ -16,7 +16,7 @@ group :development, :test do
   gem 'rack-test'
   gem 'rspec'
   gem 'rspec_file_chef'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.89'
   gem 'rubocop-rspec', '~> 1.42'
   gem 'simplecov', '~> 0.13.0'
 end

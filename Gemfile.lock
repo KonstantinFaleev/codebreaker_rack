@@ -87,7 +87,7 @@ DEPENDENCIES
   rack-test
   rspec
   rspec_file_chef
-  rubocop
+  rubocop (~> 0.89)
   rubocop-rspec (~> 1.42)
   simplecov (~> 0.13.0)
 
