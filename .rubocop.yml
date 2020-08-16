@@ -17,6 +17,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - spec/**/*.rb
+    - vendor/bundle/**/*
 
 Metrics/ClassLength:
   Max: 200
