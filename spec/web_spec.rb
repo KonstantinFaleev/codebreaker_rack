@@ -80,10 +80,6 @@ module Codebreaker
 
               specify { status_200 }
 
-              it 'load new locale' do
-                expect(last_response.body).to include("<html lang=\"ru\">")
-              end
-            
               it 'render index template' do
                 expect(last_response.body).to include("index-template")
               end
@@ -98,13 +94,6 @@ module Codebreaker
 
               specify { status_200 }
 
-              it 'load new locale' do
-                expect(last_response.body).to include("<html lang=\"ru\">")
-              end
-            
-              it 'render index template' do
-                expect(last_response.body).to include("index-template")
-              end
             end
 
             context 'change locale from other places' do
@@ -115,10 +104,6 @@ module Codebreaker
               end
 
               specify { status_200 }
-
-              it 'load new locale' do
-                expect(last_response.body).to include("<html lang=\"ru\">")
-              end
             
               it 'render current template' do
                 expect(last_response.body).to include("scores-template")
