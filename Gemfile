@@ -6,7 +6,7 @@ ruby '2.7.1'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem 'codebreaker', github: 'KonstantinFaleev/codebreaker', branch: 'development'
-gem 'rack'
+gem 'rack', '~> 2.0.6'
 gem 'colorize'
 
 group :development, :test do

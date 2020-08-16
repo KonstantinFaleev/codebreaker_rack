@@ -21,7 +21,7 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.4)
       ast (~> 2.4.1)
-    rack (2.2.3)
+    rack (2.0.9)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
@@ -68,7 +68,7 @@ DEPENDENCIES
   codebreaker!
   codeclimate-test-reporter
   colorize
-  rack
+  rack (~> 2.0.6)
   rack-test
   rspec
   rspec_file_chef
