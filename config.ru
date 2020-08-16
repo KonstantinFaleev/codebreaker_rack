@@ -1,5 +1,5 @@
 require 'codebreaker'
-require 'erb'
+require 'haml'
 require 'securerandom'
 require_relative 'lib/error_logger'
 require_relative 'lib/actions_inspector'

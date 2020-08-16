@@ -1,0 +1,14 @@
+%hr.mb-4
+.row
+  .col.button
+    %button.btn.btn-primary{:type => "button"}
+      = message['ui']['level']
+      %span.badge.badge-light= message['form']['level'][game.configuration.level.to_s]
+  .col.text-center.button
+    %button.btn.btn-primary{:type => "button"}
+      = message['ui']['score']
+      %span.badge.badge-light= game.score
+  .col.button
+    %button.btn.btn-primary.float-right{:type => "button"}
+      = message['ui']['rating']
+      %span.badge.badge-light= player_rate

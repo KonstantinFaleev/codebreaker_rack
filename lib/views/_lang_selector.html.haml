@@ -1,0 +1,10 @@
+#lang_menu
+  %form{:method => "post", :action => "#{Web::LANG_URL}"}
+    %select.custom-select#langSelect{:name => "lang", :onchange => 'this.form.submit()'}
+      %option{:value => "en"}=message['form']['lang']['eng']
+      %option{:value => "ru"}=message['form']['lang']['rus']
+    %noscript
+      %input{:type => "submit"}
+
+:javascript
+  document.getElementById("langSelect").value = "#{locale.lang}";

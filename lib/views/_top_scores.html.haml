@@ -1,0 +1,29 @@
+- unless scores.empty?
+  %p.lead.text-white-70= message['form']['submit']['top_player']
+%hr.mb-4
+- if scores.empty?
+  <!-- empty-scores -->
+  %h3.text-white= message['body']['no_scores']
+- else
+  <!-- top-scores -->
+  .table-responsive-md.scores
+    %table.table.table-striped.table.table-sm
+      %thead
+        %tr
+          %th{:scope => "col"}#
+          %th{:scope => "col"}= message['table']['name']
+          %th{:scope => "col"}= message['table']['level']
+          %th{:scope => "col"}= message['table']['score']
+          %th{:scope => "col"}= message['table']['summary']
+          %th{:scope => "col"}= message['table']['date']
+      %tbody
+        - top_players.first(Web::TOTAL_PLAYERS).each_with_index do |object, index|
+          %tr
+            %th{:scope => "col"}= index.next
+            %td= object.player_name
+            %td= message['form']['level'][object.level.to_s]
+            %td= object.score
+            %td= message['table']["_#{object.winner}"]
+            %td= object.date.strftime('%Y.%m.%d')
+%hr.mb-4
+= render('_button_home')
