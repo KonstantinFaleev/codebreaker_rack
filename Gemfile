@@ -5,7 +5,7 @@ ruby '2.7.1'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'codebreaker', github: 'KonstantinFaleev/codebreaker', branch: 'development'
+gem 'codebreaker', git: 'https://github.com/KonstantinFaleev/codebreaker', branch: 'development'
 gem 'rack', '~> 2.0.6'
 gem 'colorize'
 
@@ -17,3 +17,4 @@ group :development, :test do
   gem 'simplecov', '~> 0.13.0'
   gem 'codeclimate-test-reporter'
 end
+
