@@ -32,13 +32,13 @@ module Codebreaker
 
     def forbidden?
       case
-        when restricted_access.include?(request.path)
-          session_failed?
-        when request.path == PLAY_URL
-          (anonymous? || fake_data?) && session_failed?
-        when request.path == LANG_URL
-          fake_lang?
-        else false
+      when restricted_access.include?(request.path)
+        session_failed?
+      when request.path == PLAY_URL
+        (anonymous? || fake_data?) && session_failed?
+      when request.path == LANG_URL
+        fake_lang?
+      else false
       end
     end
 

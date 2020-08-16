@@ -30,14 +30,14 @@ module Codebreaker
 
     def response
       case request.path
-        when ROOT_URL then load_index
-        when LANG_URL then change_lang
-        when PLAY_URL then play
-        when HINT_URL then show_hint
-        when SUBMIT_URL then submit_answer
-        when FINISH_URL then finish_game
-        when SCORES_URL then top_scores
-        else page_not_found
+      when ROOT_URL then load_index
+      when LANG_URL then change_lang
+      when PLAY_URL then play
+      when HINT_URL then show_hint
+      when SUBMIT_URL then submit_answer
+      when FINISH_URL then finish_game
+      when SCORES_URL then top_scores
+      else page_not_found
       end
     end
 
