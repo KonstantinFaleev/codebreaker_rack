@@ -17,6 +17,9 @@ GEM
     docile (1.1.5)
     dry-configurable (0.7.0)
       concurrent-ruby (~> 1.0)
+    fasterer (0.8.3)
+      colorize (~> 0.7)
+      ruby_parser (>= 3.14.1)
     json (2.3.1)
     parallel (1.19.2)
     parser (2.7.1.4)
@@ -54,6 +57,9 @@ GEM
     rubocop-ast (0.3.0)
       parser (>= 2.7.1.4)
     ruby-progressbar (1.10.1)
+    ruby_parser (3.14.2)
+      sexp_processor (~> 4.9)
+    sexp_processor (4.15.0)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -68,6 +74,7 @@ DEPENDENCIES
   codebreaker!
   codeclimate-test-reporter
   colorize
+  fasterer
   rack (~> 2.0.6)
   rack-test
   rspec

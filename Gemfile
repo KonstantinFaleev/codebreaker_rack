@@ -11,6 +11,7 @@ gem 'rack', '~> 2.0.6'
 group :development, :test do
   gem 'codeclimate-test-reporter'
   gem 'colorize'
+  gem 'fasterer'
   gem 'rack-test'
   gem 'rspec'
   gem 'rspec_file_chef'
