@@ -24,8 +24,8 @@
       start_game: Start the game!
       answer: Submit
       hint: Show hint!
-      top_start: Top of
-      top_end: players
+      statistic: Statistics
+      top_player: Top of Players
       home: Home
       play_again: Play again!
   body:

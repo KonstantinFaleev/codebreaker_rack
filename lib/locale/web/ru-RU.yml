@@ -24,8 +24,8 @@
       start_game: Начать игру!
       answer: Отправить
       hint: Показать подсказку!
-      top_start: Лучшие
-      top_end: игроков
+      statistic: Статистика
+      top_player: Лучшие игроки
       home: На главную
       play_again: Играть еще!
   body:
