@@ -15,10 +15,7 @@ module Codebreaker
     end
 
     def call(env)
-      @request = Rack::Request.new(env)
-      @locale = request.session.options[:locale]      
-      @player_name = request.params['player_name']
-      @level = request.params['level']
+      call_instance(env)
 
       if forbidden?
         error_template('error', 403) { message['body']['403_info'] }
@@ -30,15 +27,22 @@ module Codebreaker
 
     private
 
+    def call_instance(env)
+      @request = Rack::Request.new(env)
+      @locale = request.session.options[:locale]
+      @player_name = request.params['player_name']
+      @level = request.params['level']
+    end
+
     def forbidden?
-      case
-      when restricted_access.include?(request.path)
+      if restricted_access.include?(request.path)
         session_failed?
-      when request.path == PLAY_URL
+      elsif request.path == PLAY_URL
         (anonymous? || fake_data?) && session_failed?
-      when request.path == LANG_URL
+      elsif request.path == LANG_URL
         fake_lang?
-      else false
+      else
+        false
       end
     end
 

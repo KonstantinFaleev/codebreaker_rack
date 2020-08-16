@@ -81,16 +81,19 @@ module Codebreaker
       begin
         game.guess_valid?(user_input)
         self.last_guess = user_input
-        self.marker = game.to_guess(last_guess).tr(' ','x')
-
-        if game_over?
-          save_game_data
-          go_to(FINISH_URL)
-        else
-          self.hint = false
-          go_to(PLAY_URL)
-        end
+        self.marker = game.to_guess(last_guess).tr(' ', 'x')
+        check_game_over
       rescue
+        go_to(PLAY_URL)
+      end
+    end
+
+    def check_game_over
+      if game_over?
+        save_game_data
+        go_to(FINISH_URL)
+      else
+        self.hint = false
         go_to(PLAY_URL)
       end
     end

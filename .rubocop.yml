@@ -10,6 +10,11 @@ Style/StringLiterals:
 Style/ParallelAssignment:
   Enabled: false
 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - spec/**/*.rb
+
 Metrics/ClassLength:
   Max: 200
 
@@ -17,4 +22,16 @@ Metrics/LineLength:
   Max: 120
 
 Documentation:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/RegexpLiteral:
   Enabled: false

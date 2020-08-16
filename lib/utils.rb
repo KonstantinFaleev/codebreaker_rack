@@ -17,7 +17,7 @@ module Codebreaker
     def define_session_accessors
       %i[game token ip scores last_guess marker hint].each do |method|
         self.class.class_eval do
-          define_method("#{method}") do
+          define_method(method.to_s) do
             request.session[method]
           end
 
@@ -30,12 +30,16 @@ module Codebreaker
 
     def create_game_instance
       self.game ||= Game.new do |config|
-        config.player_name = request.params['player_name']
-        config.max_attempts = Web::MAX_ATTEMPTS
-        config.max_hints = Web::MAX_HINTS
-        config.level = request.params['level'].to_sym
-        config.lang = self.locale.lang
+        create_config(config)
       end
+    end
+
+    def create_config(config)
+      config.player_name = request.params['player_name']
+      config.max_attempts = Web::MAX_ATTEMPTS
+      config.max_hints = Web::MAX_HINTS
+      config.level = request.params['level'].to_sym
+      config.lang = self.locale.lang
     end
 
     def generate_token
@@ -96,8 +100,10 @@ module Codebreaker
 
     def referer
       return Web::ROOT_URL unless request.referer
-      url = request.referer[/\A.+\/{2}.+(\/.+)\z/,1]
-      url ? url : Web::ROOT_URL
+
+      url = request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
+      url ||= Web::ROOT_URL
+      url
     end
   end
 end
