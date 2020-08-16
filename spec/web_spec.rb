@@ -185,9 +185,6 @@ module Codebreaker
                 game_template
               end
 
-              it 'motivation message' do
-                expect(last_response.body).to include('hideAlert')
-              end
             end
 
             context 'game over' do
