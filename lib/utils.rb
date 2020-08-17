@@ -103,7 +103,6 @@ module Codebreaker
 
       url = request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
       url ||= Web::ROOT_URL
-      url
     end
   end
 end

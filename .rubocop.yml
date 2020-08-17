@@ -19,17 +19,11 @@ AllCops:
     - spec/**/*.rb
     - vendor/bundle/**/*
 
-Metrics/ClassLength:
-  Max: 200
-
 Documentation:
   Enabled: false
 
 Style/RedundantSelf:
   Enabled: false
-
-Metrics/CyclomaticComplexity:
-  Max: 8
 
 Style/RescueStandardError:
   Enabled: false
