@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 module Codebreaker
   RSpec.describe Web do
     before(:context) do
