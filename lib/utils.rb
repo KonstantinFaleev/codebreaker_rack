@@ -99,11 +99,11 @@ module Codebreaker
     end
 
     def referer
-      return Web::ROOT_URL unless request.referer
-
-      url = request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
-      url ||= Web::ROOT_URL
-      url
+      if request.referer && request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
+        request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
+      else
+        Web::ROOT_URL
+      end
     end
   end
 end

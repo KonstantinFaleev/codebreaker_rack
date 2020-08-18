@@ -4,12 +4,6 @@ require:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
-  SupportedStyles:
-    - single_quotes
-    - double_quotes
-
 Style/ParallelAssignment:
   Enabled: false
 
@@ -25,8 +19,8 @@ Documentation:
 Style/RedundantSelf:
   Enabled: false
 
-Metrics/CyclomaticComplexity:
-  Max: 8
+#Metrics/CyclomaticComplexity:
+#  Max: 8
 
 Style/RescueStandardError:
   Enabled: false
