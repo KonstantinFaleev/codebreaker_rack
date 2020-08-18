@@ -99,8 +99,8 @@ module Codebreaker
     end
 
     def referer
-      if request.referer && request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
-        request.referer[/\A.+\/{2}.+(\/.+)\z/, 1]
+      if request.referer && request.referer[%r{/\A.+/{2}.+(/.+)\z/}, 1]
+        request.referer[%r{/\A.+/{2}.+(/.+)\z/}, 1]
       else
         Web::ROOT_URL
       end

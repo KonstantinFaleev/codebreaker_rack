@@ -19,11 +19,5 @@ Documentation:
 Style/RedundantSelf:
   Enabled: false
 
-#Metrics/CyclomaticComplexity:
-#  Max: 8
-
-Style/RescueStandardError:
-  Enabled: false
-
-Style/RegexpLiteral:
-  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 8

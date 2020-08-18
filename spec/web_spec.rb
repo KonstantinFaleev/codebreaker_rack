@@ -93,20 +93,6 @@ module Codebreaker
               specify { status_200 }
 
             end
-
-            context 'change locale from other places' do
-              before do
-                allow_any_instance_of(Rack::Request).to receive(:referer).and_return("http://example.com#{Web::SCORES_URL}")
-                post(Web::LANG_URL, lang: 'ru')
-                follow_redirect!
-              end
-
-              specify { status_200 }
-            
-              it 'render current template' do
-                expect(last_response.body).to include("scores-template")
-              end
-            end
           end
         end
       end

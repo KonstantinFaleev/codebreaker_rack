@@ -83,7 +83,7 @@ module Codebreaker
         self.last_guess = user_input
         self.marker = game.to_guess(last_guess).tr(' ', 'x')
         check_game_over
-      rescue
+      rescue StandardError
         go_to(PLAY_URL)
       end
     end
