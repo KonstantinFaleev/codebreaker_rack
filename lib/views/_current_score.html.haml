@@ -1,0 +1,23 @@
+<!-- current-score -->
+.text-center
+  %h3.text-white
+    - if game.won?
+      = message['body']['congrats_start']
+      = game.configuration.player_name
+      = message['body']['congrats_end']
+    - else
+      = message['body']['lost_start']
+      = game.configuration.player_name
+      = message['body']['lost_end']
+= render('_user_summary')
+%hr.mb-4
+.text-center
+  - if game.won?
+    %img.img-fluid{:src => "images/won.gif", :alt => "#{message['body']['congrats_end']}"}
+  - else
+    %img.img-fluid{:src => "images/lost.gif", :alt => "#{message['body']['congrats_end']}"}
+%hr.mb-4
+%a.btn.btn-primary.btn-lg{:href => "#{Web::ROOT_URL }", :role => "button"}
+  = request.path == Web::FINISH_URL ? message['form']['submit']['play_again'] : message['form']['submit']['home']
+%a.btn.btn-success.btn-lg.float-right{:href => "#{Web::SCORES_URL}", :role => "button"}
+  = message['form']['submit']['statistic']

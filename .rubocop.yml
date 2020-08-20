@@ -1,0 +1,14 @@
+require:
+  - rubocop-rspec
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - spec/**/*.rb
+    - vendor/bundle/**/*
+
+Documentation:
+  Enabled: false

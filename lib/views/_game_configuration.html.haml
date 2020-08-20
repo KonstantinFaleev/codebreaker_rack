@@ -1,0 +1,20 @@
+%form{:method => "post", :action => "#{Web::PLAY_URL}"}
+  .form-group
+    %label.lead.label{:for => "player_name"}= message['form']['label']['player_name']
+    %input.form-control#player_name{:name => "player_name", :placeholder => "#{message['form']['placeholder']['your_name']}", :required => true, :autofocus => true}
+  .form-group
+    %label.lead.label
+      = message['form']['label']['level']
+    %select.custom-select{:name => "level", :required => true}
+      %option{:value => ""}
+        = message['form']['level']['choose']
+      %option{:value => "simple"}
+        = message['form']['level']['simple']
+      %option{:value => "middle"}
+        = message['form']['level']['middle']
+      %option{:value => "hard"}
+        = message['form']['level']['hard']
+  %hr.mb-4
+  %button.btn.btn-primary.btn-lg{:type => "submit"}= message['form']['submit']['start_game']
+  %a.btn.btn-success.btn-lg.float-right{:href => "#{Web::SCORES_URL}", :role => "button"}
+    = message['form']['submit']['statistic']

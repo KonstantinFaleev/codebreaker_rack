@@ -1,0 +1,29 @@
+<!-- scores-template -->
+!!!
+%html{:lang => "#{locale.lang}"}
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:name => "description", :content => "#{message['headers']['app_name']}"}/
+    %meta{:name => "author", :content => "#{message['headers']['author']}"}/
+    %link{:href => "favicon.ico", :rel => "icon"}/
+    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/styles.css", :rel => "stylesheet"}/
+    %title
+      = request.path == Web::FINISH_URL ? message['meta']['finish'] : message['meta']['scores']
+      = message['headers']['app_name']
+  %body
+    %section#introduction
+      .container
+        .row.fill-viewport.align-items-center.justify-content-center
+          .col-12.col-md-6
+            .row
+              .col-md-auto
+                %h1.text-white.title= message['body']['app_name']
+              .col
+                = render('_lang_selector')
+            - if request.path == Web::FINISH_URL
+              = render('_current_score')
+            - else
+              = render('_top_scores')
+    = render('_analytics')
