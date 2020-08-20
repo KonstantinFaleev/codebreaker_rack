@@ -39,7 +39,7 @@ module Codebreaker
       config.max_attempts = Web::MAX_ATTEMPTS
       config.max_hints = Web::MAX_HINTS
       config.level = request.params['level'].to_sym
-      config.lang = self.locale.lang
+      config.lang = locale.lang
     end
 
     def generate_token
@@ -52,8 +52,8 @@ module Codebreaker
 
     def save_extended_user_data
       scores.last.update do |score|
-        score.token = self.token
-        score.ip = self.ip
+        score.token = token
+        score.ip = ip
       end
     end
 

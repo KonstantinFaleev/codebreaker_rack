@@ -28,6 +28,7 @@ module Codebreaker
       apply_external_path(File.expand_path('./lib/data'))
     end
 
+    # rubocop:disable Metrics/CyclomaticComplexity
     def response
       case request.path
       when ROOT_URL then load_index
@@ -40,6 +41,7 @@ module Codebreaker
       else page_not_found
       end
     end
+    # rubocop:enable Metrics/CyclomaticComplexity
 
     private
 

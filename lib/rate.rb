@@ -23,7 +23,7 @@ module Codebreaker
       end
     end
 
-    def player_rate(player_token = self.token)
+    def player_rate(player_token = token)
       top_players.index { |player_score| player_score.token == player_token }&.next
     end
   end
