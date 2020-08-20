@@ -34,13 +34,15 @@ module Codebreaker
       end
     end
 
+    # rubocop:disable Metrics/AbcSize
     def create_config(config)
       config.player_name = request.params['player_name']
-      config.max_attempts = Web::MAX_ATTEMPTS
-      config.max_hints = Web::MAX_HINTS
+      config.max_attempts = Web::ATTEMPTS[request.params['level'].to_sym]
+      config.max_hints = Web::HINTS[request.params['level'].to_sym]
       config.level = request.params['level'].to_sym
       config.lang = locale.lang
     end
+    # rubocop:enable Metrics/AbcSize
 
     def generate_token
       self.token ||= SecureRandom.uuid

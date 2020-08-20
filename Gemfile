@@ -6,9 +6,9 @@ ruby '2.7.1'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem 'codebreaker', git: 'https://github.com/KonstantinFaleev/codebreaker', branch: 'development'
+gem 'colorize'
 gem 'haml'
 gem 'rack', '~> 2.0.6'
-gem 'colorize'
 
 group :development, :test do
   gem 'codeclimate-test-reporter'
