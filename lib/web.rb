@@ -78,17 +78,20 @@ module Codebreaker
       go_to(PLAY_URL)
     end
 
+    # rubocop:disable Metrics/AbcSize
     def submit_answer
       user_input = request.params['number']
       begin
         game.guess_valid?(user_input)
         self.last_guess = user_input
-        self.marker = game.to_guess(last_guess).tr(' ', 'x')
+        self.marker = game.to_guess(last_guess).tr(' ', 'x').each_char.map(&:to_s).sort.join
+
         check_game_over
       rescue StandardError
         go_to(PLAY_URL)
       end
     end
+    # rubocop:enable Metrics/AbcSize
 
     def check_game_over
       if game_over?
