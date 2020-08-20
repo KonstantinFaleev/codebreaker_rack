@@ -5,6 +5,7 @@
   - unless game.won?
     .form-group.guess_markers_list
       #guess_marker= marker
+      %p= marker
   %hr.mb-4
   %button.btn.btn-primary.btn-lg= message['form']['submit']['answer']
   %a.btn.btn-warning.btn-lg.float-right{:href => "#{Web::HINT_URL}", :role => "button", :class => "#{'disabled' unless hints_allowed?}"}
