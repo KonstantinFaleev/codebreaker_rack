@@ -8,10 +8,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem 'codebreaker', git: 'https://github.com/KonstantinFaleev/codebreaker', branch: 'development'
 gem 'haml'
 gem 'rack', '~> 2.0.6'
+gem 'colorize'
 
 group :development, :test do
   gem 'codeclimate-test-reporter'
-  gem 'colorize'
   gem 'fasterer'
   gem 'rack-test'
   gem 'rspec'
